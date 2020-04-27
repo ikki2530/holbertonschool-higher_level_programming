@@ -1,1 +1,8 @@
 # 0x00. Python - Hello, World
+
+# Files
+Those are the files that you can find into this projects
+| File | Features |
+| ------ | ------ |
+| **0-run** | Runs a Python script saved in the environment variable $PYFILE |
+| **1-run_inline** | Runs Python code saved in the environment variable $PYCODE |
