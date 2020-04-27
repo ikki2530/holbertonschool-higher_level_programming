@@ -6,3 +6,4 @@ Those are the files that you can find into this projects
 | ------ | ------ |
 | **0-run** | Runs a Python script saved in the environment variable $PYFILE |
 | **1-run_inline** | Runs Python code saved in the environment variable $PYCODE |
+| **2-print.py** | prints exactly \"Programming is like building a multilingual puzzle |
