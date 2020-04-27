@@ -11,3 +11,4 @@ Those are the files that you can find into this projects
 | **4-print_float.py** | Print the float stored in the variable number with a precision of 2 digits |
 | **5-print_string.py** | Prints 3 times a string stored in the variable str, followed by its first 9 characters |
 | **6-concat.py** | Concats and print print Welcome to Holberton School! |
+| **7-edges.py** | Prints some sub-strings of word=\"Holberton\" |
