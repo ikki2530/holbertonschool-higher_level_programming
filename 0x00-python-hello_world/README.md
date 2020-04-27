@@ -14,3 +14,5 @@ Those are the files that you can find into this projects
 | **7-edges.py** | Prints some sub-strings of word=\"Holberton\" |
 | **8-concat_edges.py** | Prints object-oriented programming with Python, followed by a new line |
 | **9-easter_egg.py** | Prints The Zen of Python, by TimPeters, followed by a new line. |
+| **10-check_cycle.c** | Checks if a singly linked list has a cycle in it |
+| **lists.h** | File header for all C functions and structures |
