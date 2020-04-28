@@ -15,4 +15,5 @@ Those are the files that you can find into this projects
 | **8-concat_edges.py** | Prints object-oriented programming with Python, followed by a new line |
 | **9-easter_egg.py** | Prints The Zen of Python, by TimPeters, followed by a new line. |
 | **10-check_cycle.c** | Checks if a singly linked list has a cycle in it |
+| **100-write.py** | prints exactly and that piece of art is useful - Dora Korpar, 2015-10-19 using write function from sys module |
 | **lists.h** | File header for all C functions and structures |
