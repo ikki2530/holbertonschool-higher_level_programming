@@ -9,3 +9,4 @@ Those are the files that you can find into this projects
 | **2-print_alphabet.py** | prints the ASCII alphabet, in lowercase |
 | **3-print_alphabt.py** | prints the ASCII alphabet, in lowercase, except e and q letters |
 | **4-print_hexa.py** | prints all numbers from 0 to 98 in decimal and in hexadecimal |
+| **5-print_comb2.py** | prints numbers from 00 to 99 |
