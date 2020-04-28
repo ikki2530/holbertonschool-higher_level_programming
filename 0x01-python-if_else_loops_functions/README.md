@@ -8,3 +8,4 @@ Those are the files that you can find into this projects
 | **1-last_digit.py** | Prints the last digit of a number with a message |
 | **2-print_alphabet.py** | prints the ASCII alphabet, in lowercase |
 | **3-print_alphabt.py** | prints the ASCII alphabet, in lowercase, except e and q letters |
+| **4-print_hexa.py** | prints all numbers from 0 to 98 in decimal and in hexadecimal |
