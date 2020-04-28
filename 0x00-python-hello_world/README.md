@@ -18,3 +18,4 @@ Those are the files that you can find into this projects
 | **100-write.py** | prints exactly and that piece of art is useful - Dora Korpar, 2015-10-19 using write function from sys module |
 | **lists.h** | File header for all C functions and structures |
 | **101-compile** | compiles a Python script file |
+| **102-magic_calculation.py** | Math operation, discover from Python bytecode |
