@@ -11,8 +11,13 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *ret;
 	unsigned int cont = 0;
 
-	if (head == NULL)
-		return (NULL);
+	if (*head == NULL)
+	{
+		ret = insert_nodeint_at_index(head, cont, number);
+		if (ret == NULL)
+			return (NULL);
+		return (ret);
+	}
 	while (new_n)
 	{
 		if (new_n->n >= number)
