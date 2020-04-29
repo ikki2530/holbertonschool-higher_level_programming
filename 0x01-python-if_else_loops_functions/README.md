@@ -19,3 +19,4 @@ Those are the files that you can find into this projects
 | **12-fizzbuzz.py** | function that prints the numbers from 1 to 100 separated by a space. |
 | **13-insert_number.c** | inserts a number into a sorted singly linked list. |
 | **100-print_tebahpla.py** | prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) |
+| **101-remove_char_at.py** | creates a copy of the string, removing the character at the position n |
