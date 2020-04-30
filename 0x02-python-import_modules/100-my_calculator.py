@@ -19,6 +19,6 @@ if __name__ == "__main__":
         elif op == "/":
             print("{0:d} / {1:d} = {2:d}".format(a, b, div(a, b)))
         else:
-            print("{}".format("Unknown operator. Available operators:"), end="")
-            print("{}".format(" +, -, * and /"))
+            print("{}".format("Unknown operator. Available operators"), end="")
+            print("{}".format(": +, -, * and /"))
             sys.exit(1)
