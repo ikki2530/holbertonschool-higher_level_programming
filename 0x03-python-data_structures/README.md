@@ -13,3 +13,4 @@ Those are the files that you can find into this projects
 | **6-print_matrix_integer.py** | prints a matrix of integers. |
 | **7-add_tuple.py** | adds 2 tuples. |
 | **8-multiple_returns.py** | returns a tuple with the length of a string and its first character. |
+| **9-max_integer.py** | finds the biggest integer of a list. |
