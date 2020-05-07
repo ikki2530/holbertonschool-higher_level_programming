@@ -5,8 +5,6 @@ def roman_to_int(roman_string):
     minn = 0
     if roman_string and type(roman_string) == str:
         for rom in roman_string:
-            if rom not in "IVXLCDM":
-                return 0
             for k, val in r_nums.items():
                 if k == rom:
                     if minn < val:
