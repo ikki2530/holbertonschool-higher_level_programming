@@ -10,3 +10,4 @@ Those are the files that you can find into this projects
 | **4-only_diff_elements.py** | returns a set of all elements present in only one set. |
 | **5-number_keys.py** | returns the number of keys in a dictionary. |
 | **6-print_sorted_dictionary.py** | prints a dictionary by ordered keys. |
+| **7-update_dictionary.py** | replaces or adds key/value in a dictionary. |
