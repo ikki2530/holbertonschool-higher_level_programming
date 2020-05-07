@@ -14,4 +14,4 @@ def roman_to_int(roman_string):
                     num += val
                     minn = val
         return num
-    return None
+    return 0
