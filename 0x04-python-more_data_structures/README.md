@@ -17,3 +17,4 @@ Those are the files that you can find into this projects
 | **11-mutiply_list_map.py** | returns a list with all values multiplied by a number without using any loops. |
 | **12-roman_to_int.py** |  converts a Roman numeral to an integer. |
 | **100-weight_average.py** | returns the weighted average of all integers tuple (<score>, <weight>) |
+| **101-square_matrix_map.py** | computes the square value of all integers of a matrix using map |
