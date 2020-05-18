@@ -11,3 +11,4 @@ Those are the files that you can find into this projects
 | **5-raise_exception.py** | raises a type exception. |
 | **6-raise_exception_msg.py** | raises a name exception with a message. |
 | **100-safe_print_integer_err.py** | prints an integer. |
+| **101-safe_function.py** |  executes a function safely. |
