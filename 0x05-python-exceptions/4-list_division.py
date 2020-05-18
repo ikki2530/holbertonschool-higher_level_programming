@@ -7,7 +7,7 @@ def list_division(my_list_1, my_list_2, list_length):
             new.append(val)
         except TypeError:
             new.append(0)
-            print("{}".format("wrong dasdastype"))
+            print("{}".format("wrong type"))
         except ZeroDivisionError:
             new.append(0)
             print("{}".format("division by 0"))
