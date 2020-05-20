@@ -9,3 +9,4 @@ Those are the files that you can find into this projects
 | **3-square.py** | Add def area(self): function |
 | **4-square.py** | Add property def size(self): to retrieve it and the respective setter function |
 | **5-square.py** | Add my_print function |
+| **6-square.py** | Add a tuple to the class |
