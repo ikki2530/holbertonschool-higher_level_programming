@@ -1,0 +1,5 @@
+===============================
+ How to Use 2-matrix_divided.py
+===============================
+
+divides all elements of a matrix.

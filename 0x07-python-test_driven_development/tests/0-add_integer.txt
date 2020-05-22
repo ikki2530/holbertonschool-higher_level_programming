@@ -1,0 +1,218 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+Function: adds two integer numbers
+
+Import module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+Operations:
+‘a’ and ‘b’ must be integers or float:
+
+INTEGERS
+Test 0: Adds two positive integers
+	>>> add_integer(10, 15)
+	25
+	>>> add_integer(30, 2)
+	32
+	>>> add_integer(1, 04)
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid token
+
+Test 1: Adds two negative integers
+	>>> add_integer(-10, -15)
+	-25
+	>>> add_integer(-30, -2)
+	-32
+
+Test 2: Combine negative and positive integers
+	>>> add_integer(-10, 15)
+	5
+	>>> add_integer(20, -130)
+	-110
+	>>> add_integer(-1220, -1500)
+	-2720
+
+FLOATS
+Test 3:  Positive floats
+	>>> add_integer(10.5, 13.3)
+	23
+	>>> add_integer(100.3, 30.4)
+	130
+
+Test 4: Negative floats
+	>>> add_integer(-10.5, -3.2)
+	-13
+	>>> add_integer(-15.5, -1000.1)
+	-1015
+
+Test 5: mixing negative and positive floats
+	>>> add_integer(-20.5, 10.3)
+	-10
+	>>> add_integer(1200.3, -100.6)
+	1100
+
+INTEGERS AND FLOATS
+test 6: positive both
+	>>> add_integer(10.5, 8)
+	18
+	>>> add_integer(1200.4, 100)
+	1300
+
+test 7: both negative
+	>>> add_integer(-1000.5, -5)
+	-1005
+	>>> add_integer(-50, -10.3)
+	-60
+
+test 8: Mixing positive and negative floats
+	>>> add_integer(100.5, -2)
+	98
+	>>> add_integer(20.5, 3)
+	23
+	>>> add_integer(-20.9, 8)
+	-12
+	>>> add_integer(-30.5, -3)
+	-33
+	>>> add_integer(-5, 98.3)
+	93
+	>>> add_integer(5, 98.3)
+	103
+	>>> add_integer(30, -10.3)
+	20
+	>>> add_integer(-5, 10.4)
+	5
+
+STRINGS WITH INTEGERS
+test 9: string with integers(positive and negative)
+	>>> add_integer("Holb", 10)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(20, "Holb")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+	>>> add_integer("holb", -20)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(-30, "HOLBE")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+STRINGS WITH FLOATS
+test 10: strings with floats
+	>>> add_integer("Holb", 10.5)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(20.4, "Holb")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+	>>> add_integer("holb", -20.9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(-30.2, "HOLBE")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer("6", 30)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(-30.5, "5.3")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+INCLUDING NONE
+test 11: None with integers and floats
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(None, -2.5)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(-5, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+	>>> add_integer(-5.4, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+ONE ARGUMENT
+test n: one argument all cases
+	>>> add_integer(5)
+	103
+	>>> add_integer(-4)
+	94
+	>>> add_integer(10.5)
+	108
+	>>> add_integer(-5.5)
+	93
+	>>> add_integer("Hol")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer("5")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(int("5"))
+	103
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+PARAMETER CONVERSION
+test n:
+	>>> add_integer(int("9"), -3)
+	6
+	>>> add_integer(float("5.3"), 8)
+	13
+
+	>>> add_integer(10, float("5.3"))
+	15
+
+NOT ARGUMENTS
+test n:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+FLOAT OVERFLOW
+test n: overflow with float
+	>>> add_integer(float("inf"))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+
+test 9: passing integers
+Test 1: Checks the type
+	>>> type(add_integer(7, 9))
+	<class 'int'>
+
+
+
+
+

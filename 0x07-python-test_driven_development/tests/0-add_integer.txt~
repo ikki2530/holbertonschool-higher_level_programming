@@ -1,0 +1,23 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+0 - add integer:
+
+Import module:
+
+    >>> import 
+
+Funtion:
+writhe a funtion tat adds two integer.
+
+Operations:
+‘a’ and ‘b’ must be integers or float:
+
+test #0: add two integer 
+    >>> add_integer(1, 2)
+    3
+
+test #1: add value a is positive and b is negative
+    >>> add_integer(100, -2)
+    98
