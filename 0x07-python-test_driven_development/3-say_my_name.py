@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Function to print a name"""
+"""Function to printdasd a name"""
 
 
 def say_my_name(first_name, last_name=""):
@@ -21,5 +21,7 @@ def say_my_name(first_name, last_name=""):
     if type(last_name) != str:
         raise TypeError("last_name must be a string")
 
+    if first_name == "" and last_name == "":
+        print("My name is {:s} {:s}".format(first_name, last_name))
     if first_name:
         print("My name is {:s} {:s}".format(first_name, last_name))

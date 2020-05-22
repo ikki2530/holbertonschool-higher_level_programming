@@ -8,7 +8,7 @@ Import module:
 
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Operations: matrix must have only integers or floats, div must be an integer or floats
+Notes: matrix must have only integers or floats, div must be an integer or floats
 
 TESTING div
 test 0: div is not a number
@@ -84,6 +84,11 @@ test 3: check if the content are list
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+    >>> matrix_divided(([1, 2, 3], [4, 5, 6], [7, 8, 9]), 3.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 test 4: check if content list are numbs
     >>> matrix_divided([[1, 2, 3], [4, "holb", 6], [7, 8, 9]], 3)
     Traceback (most recent call last):
@@ -111,10 +116,18 @@ test 6: integers and floats
     >>> matrix_divided([[1, -2.4, 3], [-4, 5.5, 6], [7, -8, 9]], 3.0)
     [[0.33, -0.8, 1.0], [-1.33, 1.83, 2.0], [2.33, -2.67, 3.0]]
 
+    >>> matrix_divided([7], 3.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 ONLY ONE ROW
 test 7:
     >>> matrix_divided([[1, 2, 3]], 3.0)
     [[0.33, 0.67, 1.0]]
+
+    >>> matrix_divided([[2]], 3.0)
+    [[0.67]]
 
 ARGUMENTS None
 test 8:
