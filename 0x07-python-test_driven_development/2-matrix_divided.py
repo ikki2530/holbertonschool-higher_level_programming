@@ -3,6 +3,24 @@
 
 
 def matrix_divided(matrix, div):
+    """[summary]
+
+    Arguments:
+        matrix {[type]} -- [description]
+        div {[type]} -- [description]
+
+    Raises:
+        TypeError: [description]
+        ZeroDivisionError: [description]
+        TypeError: [description]
+        TypeError: [description]
+        TypeError: [description]
+        TypeError: [description]
+        TypeError: [description]
+
+    Returns:
+        [type] -- [description]
+    """
     new = []
     len_row = 0
     must_matrix = "matrix must be a matrix (list of lists) of integers/floats"
