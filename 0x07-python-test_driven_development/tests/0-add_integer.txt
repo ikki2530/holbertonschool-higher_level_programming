@@ -155,7 +155,7 @@ test 11: None with integers and floats
 	TypeError: b must be an integer
 
 ONE ARGUMENT
-test n: one argument all cases
+test 12: one argument all cases
 	>>> add_integer(5)
 	103
 	>>> add_integer(-4)
@@ -183,7 +183,7 @@ test n: one argument all cases
 	TypeError: a must be an integer
 
 PARAMETER CONVERSION
-test n:
+test 13:
 	>>> add_integer(int("9"), -3)
 	6
 	>>> add_integer(float("5.3"), 8)
@@ -193,21 +193,21 @@ test n:
 	15
 
 NOT ARGUMENTS
-test n:
+test 14:
 	>>> add_integer()
 	Traceback (most recent call last):
 	...
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 
 FLOAT OVERFLOW
-test n: overflow with float
+test 15: overflow with float
 	>>> add_integer(float("inf"))
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
 
-
-test 9: passing integers
+CHECKING TYPE
+test 16: passing integers
 Test 1: Checks the type
 	>>> type(add_integer(7, 9))
 	<class 'int'>
