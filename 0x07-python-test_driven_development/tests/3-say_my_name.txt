@@ -35,11 +35,16 @@ test 1:
     ...
     TypeError: first_name must be a string
 
+    >>> say_my_name(12, 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
 
 EMPTY STRINGS
 test 2:
     >>> say_my_name("", "")
     My name is  
+
 
 IT WORKS
 test 3:
