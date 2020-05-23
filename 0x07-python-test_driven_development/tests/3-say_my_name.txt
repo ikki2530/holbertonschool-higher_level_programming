@@ -41,7 +41,6 @@ test 2:
     >>> say_my_name("", "")
     My name is  
 
-    >>> say_my_name("  ", "  ")
 IT WORKS
 test 3:
     >>> say_my_name("John", "Smith")
