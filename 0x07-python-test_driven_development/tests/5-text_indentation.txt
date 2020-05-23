@@ -1,0 +1,66 @@
+===============================
+ How to Use 5-text_indentation.py
+===============================
+
+Function: print a text without indentation
+
+Import module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Note: only strings
+
+test 0:
+    >>> text = "hola"
+    >>> text_indentation(text)
+    hola
+
+    >>> text = "hola. como estas"
+    >>> text_indentation(text)
+    hola.
+    <BLANKLINE>
+    como estas
+
+    >>> text = "hola.: mundo"
+    >>> text_indentation(text)
+    hola.:
+    <BLANKLINE>
+    mundo
+
+NO .?:
+test 1:
+    >>> text = "hola\n mundo"
+    >>> text_indentation(text)
+    hola
+     mundo
+
+test 2:
+    >>> text = "hola."
+    >>> text_indentation(text)
+    hola.
+
+    >>> text = "hola?"
+    >>> text_indentation(text)
+    hola?
+
+    >>> text = "hola:"
+    >>> text_indentation(text)
+    hola:
+
+THREE CASES
+test 3:
+    >>> text = "hola. mundo: Edison?"
+    >>> text_indentation(text)
+    hola.
+    <BLANKLINE>
+    mundo:
+    <BLANKLINE>
+    Edison?
+
+NO STRING
+test 4:
+    >>> text = 50
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
