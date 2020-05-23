@@ -3,20 +3,20 @@
 
 
 def matrix_divided(matrix, div):
-    """[summary]
+    """divides a matrix
 
     Arguments:
-        matrix {[type]} -- [description]
-        div {[type]} -- [description]
+        matrix {list} -- matrix of numbers to be divided
+        div {int or float} -- divisor
 
     Raises:
-        TypeError: [description]
-        ZeroDivisionError: [description]
-        TypeError: [description]
-        TypeError: [description]
-        TypeError: [description]
-        TypeError: [description]
-        TypeError: [description]
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+        ZeroDivisionError: division by zero
+        TypeError: div must be a number
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+        TypeError: Each row of the matrix must have the same size
 
     Returns:
         [type] -- [description]
