@@ -54,3 +54,8 @@ test 3:
     >>> say_my_name("Walter", "White")
     My name is Walter White
 
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
