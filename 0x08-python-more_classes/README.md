@@ -11,3 +11,4 @@ Those are the files that you can find into this projects
 | **5-rectangle.py** | delete an instance and print a message |
 | **6-rectangle.py** | Counting instances |
 | **7-rectangle.py** | Adding a class variable |
+| **8-rectangle.py** | Adding a static method to compare rectangles area |
