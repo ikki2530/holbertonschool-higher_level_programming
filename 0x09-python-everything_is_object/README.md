@@ -5,3 +5,4 @@ Those are the files that you can find into this projects
 | ---- | ---- |
 | **0-answer.txt** | use to print the type of an object |
 | **1-answer.txt** | get the variable identifier |
+| **2-answer.txt** | check if a and b point to the same object |
