@@ -12,3 +12,4 @@ Those are the files that you can find into this projects
 | **6-answer.txt** | answer to What do these 3 lines print? |
 | **7-answer.txt** | answer to What do these 3 lines print? |
 | **8-answer.txt** | answer to What do these 3 lines print? |
+| **9-answer.txt** | answer to What do these 3 lines print? |
