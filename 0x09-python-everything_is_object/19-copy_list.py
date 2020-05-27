@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""function to copy a string"""
+
+
 def copy_list(l):
     """creates a copy of a list
 
