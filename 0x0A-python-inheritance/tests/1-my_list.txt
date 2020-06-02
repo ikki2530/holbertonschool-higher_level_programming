@@ -1,0 +1,12 @@
+===============================
+
+===============================
+
+Function: divides all elements of a matrix.
+
+Import module:
+    >>> MyList = __import__('1-my_list').MyList
+
+Note: 
+
+TESTS
