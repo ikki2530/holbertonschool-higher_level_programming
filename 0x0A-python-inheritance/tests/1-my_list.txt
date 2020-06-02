@@ -35,15 +35,10 @@ test 2: case of empty list
     >>> my_list.print_sorted()
     []
 
-test 3: pass a list to the class
-    >>> my_list = MyList([1, 4, 2, 3])
-    >>> my_list.append(5)
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+test 3:
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
+    True
 
-test 4: big negative number
-    >>> my_list = MyList([1, 4, 2, 3])
-    >>> my_list.append(-54938493284923849238492342389482394823094802482390482094809339)
-    >>> my_list.print_sorted()
-    [-54938493284923849238492342389482394823094802482390482094809339, 1, 2, 3, 4]
+
 
