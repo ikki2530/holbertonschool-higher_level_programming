@@ -2,7 +2,7 @@
 
 ===============================
 
-Function: divides all elements of a matrix.
+Function: sorted a list
 
 Import module:
     >>> MyList = __import__('1-my_list').MyList
