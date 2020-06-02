@@ -12,6 +12,4 @@ class MyList(list):
     def print_sorted(self):
         """Method for print a list sroted
         """
-        if type(self) == MyList:
-            new = sorted(self)
-            print(new)
+        print(sorted(self))
