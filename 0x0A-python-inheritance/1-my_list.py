@@ -9,9 +9,6 @@ class MyList(list):
         list {list} -- list inheritance
     """
 
-    def __init__(self):
-        pass
-
     def print_sorted(self):
         """Method for print a list sroted
         """
