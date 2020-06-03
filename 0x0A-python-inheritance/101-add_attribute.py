@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""function add_attribute"""
 
 
 def add_attribute(cls, name, val):
