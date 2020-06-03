@@ -20,11 +20,11 @@
 >>> my_list.print_sorted()
 [-1, 1, 2, 3, 4, 5]
 
->>> my_list2 = MyList()
->>> print(my_list2)
+>>> my_listn = MyList()
+>>> print(my_listn)
 []
 
->>> my_list2.print_sorted()
+>>> my_listn.print_sorted()
 []
 
 
