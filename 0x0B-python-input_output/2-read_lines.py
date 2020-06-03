@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """read_lines"""
-number_of_lines = __import__('1-number_of_lines').number_of_lines
 
 
 def read_lines(filename="", nb_lines=0):
@@ -18,3 +17,24 @@ def read_lines(filename="", nb_lines=0):
             for i in range(nb_lines):
                 data = f.readline()
                 print(data, end="")
+
+
+def number_of_lines(filename=""):
+    """counts the number of lines
+
+    Keyword Arguments:
+        filename {str} -- name of the file (default: {""})
+
+    Returns:
+        [int] -- number of lines
+    """
+    with open(filename, mode="r", encoding="utf-8") as f:
+        lineNum = 1
+
+        while True:
+            # line has the content of each line
+            line = f.readline()
+            if not line:
+                break
+            lineNum += 1
+        return lineNum - 1
