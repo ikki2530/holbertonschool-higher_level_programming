@@ -1,44 +1,30 @@
-===============================
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
 
-===============================
+#test 1
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-Function: sorted a list
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
 
-Import module:
-    >>> MyList = __import__('1-my_list').MyList
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-Note: assume that all the elements of the list will be of type int 
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-1, 1, 2, 3, 4, 5]
 
-TESTS
-test 0: case positive integers
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+>>> my_list2 = MyList()
+>>> print(my_list2)
+[]
 
-test 1: case negative numbers
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(-4)
-    >>> my_list.append(2)
-    >>> my_list.append(-3)
-    >>> my_list.append(5)
-    >>> my_list.print_sorted()
-    [-4, -3, 1, 2, 5]
-
-test 2: case of empty list
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
-
-test 3:
-    >>> my_list = MyList()
-    >>> isinstance(my_list, list)
-    True
-
+>>> my_list2.print_sorted()
+[]
 
 
