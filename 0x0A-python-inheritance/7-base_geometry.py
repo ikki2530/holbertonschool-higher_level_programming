@@ -2,7 +2,7 @@
 """class BaseGeometry"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """class for geometry
     """
 
