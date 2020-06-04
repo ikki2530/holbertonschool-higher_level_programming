@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """function add_attribute"""
+import types
 
 
-def add_attribute(cls, name, val):
+def add_attribute(obj, name, val):
     """add an attribute
 
     Arguments:
@@ -12,7 +13,6 @@ def add_attribute(cls, name, val):
     Raises:
         TypeError: can't add new attribute
     """
-    try:
-        cls.name = val
-    except:
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
+    obj.__dict__[name] = val
