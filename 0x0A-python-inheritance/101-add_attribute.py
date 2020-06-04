@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """function add_attribute"""
-import types
 
 
 def add_attribute(obj, name, val):
