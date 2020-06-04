@@ -41,5 +41,10 @@ class Student:
         return new
 
     def reload_from_json(self, json):
+        """reload from a dict
+
+        Arguments:
+            json {dict} -- disctionary with the values to be replaced
+        """
         for k, v in json.items():
             setattr(self, k, v)
