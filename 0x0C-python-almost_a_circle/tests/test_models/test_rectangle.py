@@ -20,12 +20,21 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
+
+        self.assertEqual(r1.area(), 20)  # area
+
         r2 = Rectangle(10, 2, 0, 0, 13)
         self.assertEqual(r2.id, 13)
         self.assertEqual(r2.width, 10)
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
+
+        self.assertEqual(r2.area(), 20)  # area
+
+    def test_area(self):
+        r34 = Rectangle(3, 10, 5, 4, 34)
+        self.assertEqual(r34.area(), 30)
 
     def test_None(self):
         with self.assertRaises(TypeError):
@@ -89,20 +98,7 @@ class TestRectangle(unittest.TestCase):
             r19 = Rectangle(10, "hola", "holberton", 4, 32)
         with self.assertRaises(TypeError):
             r20 = Rectangle("string", 12, -3, 4, 33)
+
     def test_empty(self):
         with self.assertRaises(TypeError):
             r21 = Rectangle()
-
-        # r6 = Rectangle(-10, 2, -3.5, 4, 17)
-        # self.assertEqual(r2.id, 14)
-        # r4 = Rectangle(10, None, 3, 4, 16)
-        # self.assertEqual(r3.id, 16)
-        # r5 = Rectangle(10, 2, None, 4, 17)
-        # self.assertEqual(r5.id, 17)
-
-        # def test(self):
-        #     r14 = Rectangle(10, -2, (-3, 10))
-
-        # def test_errors(self):
-        #     with self.assertRaises(ValueError):  # verify this error
-        #         Rectangle(10, (-3, 10), -2)
