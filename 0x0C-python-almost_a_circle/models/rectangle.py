@@ -173,6 +173,16 @@ class Rectangle(Base):
             print("#"*self.__width)
 
     def __str__(self):
+        """return a string with information about the instance
 
+        Returns:
+            str: information about rectangle
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        new_list = ["id", "width", "height", "x", "y"]
+        for i in range(len(new_list)):
+            if i < len(args):
+                setattr(self, new_list[i], args[i])

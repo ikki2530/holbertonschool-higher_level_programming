@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         """simple test
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 6)  # id = 6
+        self.assertEqual(r1.id, 7)  # id = 7
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
@@ -34,7 +34,7 @@ class TestRectangle(unittest.TestCase):
         # area
         self.assertEqual(r2.area(), 20)
 
-    #id corresponde al valor de r
+    # id corresponde al valor de r
     def test_area(self):
         r34 = Rectangle(3, 10, 5, 4, 34)
         self.assertEqual(r34.area(), 30)
@@ -43,19 +43,23 @@ class TestRectangle(unittest.TestCase):
         r35 = Rectangle(3, 5, 4, 3, 35)
         self.assertEqual(r35.display(), None)
 
-    #str
+    def test_display1(self):
+        r36 = Rectangle(3, 4, 2, 3)
+        self.assertEqual(r36.id, 5)  # id 5
+        self.assertEqual(r36.display(), None)
+
+    # str
     def test_str1(self):
         r36 = Rectangle(4, 6, 2, 1, 36)
-        self.assertTrue(r36 == None)
         self.assertEqual(r36.__str__(), "[Rectangle] (36) 2/1 - 4/6")
 
     def test_str2(self):
-        r37 = Rectangle(5, 5, 1)
-        self.assertEqual(r37.id, 5)
+        r37 = Rectangle(5, 5, 1)  # id 6
+        self.assertEqual(r37.id, 6)
         self.assertEqual(print(r37), None)
-        self.assertEqual(r37.__str__(), "[Rectangle] (5) 1/0 - 5/5")
+        self.assertEqual(r37.__str__(), "[Rectangle] (6) 1/0 - 5/5")
 
-    #id no corresponde al valor de r
+    # id no corresponde al valor de r
     def test_None(self):
         with self.assertRaises(TypeError):
             r3 = Rectangle(None, 2, 3, 4, 14)
