@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         """simple test
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 5)  # id = 5
+        self.assertEqual(r1.id, 6)  # id = 6
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
@@ -42,6 +42,18 @@ class TestRectangle(unittest.TestCase):
     def test_display0(self):
         r35 = Rectangle(3, 5, 4, 3, 35)
         self.assertEqual(r35.display(), None)
+
+    #str
+    def test_str1(self):
+        r36 = Rectangle(4, 6, 2, 1, 36)
+        self.assertTrue(r36 == None)
+        self.assertEqual(r36.__str__(), "[Rectangle] (36) 2/1 - 4/6")
+
+    def test_str2(self):
+        r37 = Rectangle(5, 5, 1)
+        self.assertEqual(r37.id, 5)
+        self.assertEqual(print(r37), None)
+        self.assertEqual(r37.__str__(), "[Rectangle] (5) 1/0 - 5/5")
 
     #id no corresponde al valor de r
     def test_None(self):
