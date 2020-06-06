@@ -21,7 +21,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
 
-        self.assertEqual(r1.area(), 20)  # area
+        # area
+        self.assertEqual(r1.area(), 20)
 
         r2 = Rectangle(10, 2, 0, 0, 13)
         self.assertEqual(r2.id, 13)
@@ -30,12 +31,19 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
 
-        self.assertEqual(r2.area(), 20)  # area
+        # area
+        self.assertEqual(r2.area(), 20)
 
+    #id corresponde al valor de r
     def test_area(self):
         r34 = Rectangle(3, 10, 5, 4, 34)
         self.assertEqual(r34.area(), 30)
 
+    def test_display0(self):
+        r35 = Rectangle(3, 5, 4, 3, 35)
+        self.assertEqual(r35.display(), None)
+
+    #id no corresponde al valor de r
     def test_None(self):
         with self.assertRaises(TypeError):
             r3 = Rectangle(None, 2, 3, 4, 14)
