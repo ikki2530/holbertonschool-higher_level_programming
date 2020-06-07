@@ -19,16 +19,6 @@ class Rectangle(Base):
             x (int, optional): x value. Defaults to 0.
             y (int, optional): y value. Defaults to 0.
             id (int, optional): id of the figure. Defaults to None.
-
-        Raises:
-            TypeError: width must be an integer
-            TypeError: height must be an integer
-            TypeError: x must be an integer
-            TypeError: y must be an integer
-            ValueError: width must be > 0"
-            ValueError: height must be > 0
-            ValueError: x must be >= 0
-            ValueError: y must be >= 0
         """
         # if type(width) != int:
         #     raise TypeError("width must be an integer")
@@ -71,7 +61,6 @@ class Rectangle(Base):
             TypeError: width must be an integer
             ValueError: width must be > 0
         """
-
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -124,7 +113,6 @@ class Rectangle(Base):
             TypeError: x must be an integer
             ValueError: x must be >= 0
         """
-        print("entro en x", value)
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -151,7 +139,6 @@ class Rectangle(Base):
             TypeError: y must be an integer
             ValueError: y must be >= 0
         """
-        print("entro en y", value)
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -185,13 +172,14 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """Updating the Rectangle values
+        """
         new_list = ["id", "width", "height", "x", "y"]
         if args and len(args) != 0:
             for i in range(len(new_list)):
                 if i < len(args):
                     setattr(self, new_list[i], args[i])
         else:
-            print(len(kwargs))
             if kwargs and len(kwargs) != 0:
                 for k in new_list:
                     for key, value in kwargs.items():
