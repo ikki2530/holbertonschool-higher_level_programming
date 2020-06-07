@@ -185,3 +185,8 @@ class Rectangle(Base):
                     for key, value in kwargs.items():
                         if k == key:
                             setattr(self, key, value)
+
+    def to_dictionary(self):
+        for k, v in self.__dict__.items():
+            print("key", k, "value", v)
+        return self.__dict__
