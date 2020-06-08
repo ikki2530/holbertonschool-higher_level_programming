@@ -5,29 +5,47 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    def test_squareid(self):
+        s98 = Square(10, 5, 4)
+
+        self.assertEqual(s98.id, 16)  # id 16
+
+        s99 = Square(10, 6, 8)
+        self.assertEqual(s99.id, 17)  # id 17
+
     # str for square
+
     def test_squarestr(self):
         s101 = Square(5, 3, 2, 101)
-        self.assertEqual(s101.__str__(), "[Square] (101) 3/2 - 5")
+        self.assertEqual(
+            s101.__str__(), "[Square] ({}) 3/2 - 5".format(s101.id))
         s102 = Square(5, 0, 0)
-        self.assertEqual(s102.__str__(), "[Square] (14) 0/0 - 5")  # id 14
+        self.assertEqual(
+            s102.__str__(), "[Square] ({}) 0/0 - 5".format(s102.id))  # id 17
 
     # update tests
     def test_squareupdate(self):
         s103 = Square(5)
-        self.assertEqual(s103.__str__(), "[Square] (17) 0/0 - 5")  # id 17
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 0/0 - 5".format(s103.id))  # id 18
         s103.update(103)
-        self.assertEqual(s103.__str__(), "[Square] (103) 0/0 - 5")
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 0/0 - 5".format(s103.id))
         s103.update(103, 2)
-        self.assertEqual(s103.__str__(), "[Square] (103) 0/0 - 2")
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 0/0 - 2".format(s103.id))
         s103.update(103, 2, 3)
-        self.assertEqual(s103.__str__(), "[Square] (103) 3/0 - 2")
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 3/0 - 2".format(s103.id))
         s103.update(103, 2, 3, 4)
-        self.assertEqual(s103.__str__(), "[Square] (103) 3/4 - 2")
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 3/4 - 2".format(s103.id))
         s103.update(y=1)
-        self.assertEqual(s103.__str__(), "[Square] (103) 3/1 - 2")
+        self.assertEqual(
+            s103.__str__(), "[Square] (103) 3/1 - 2".format(s103.id))
         s103.update(size=7, id=4000, y=1)
-        self.assertEqual(s103.__str__(), "[Square] (4000) 3/1 - 7")
+        self.assertEqual(
+            s103.__str__(), "[Square] ({}) 3/1 - 7".format(s103.id))
 
     def test_errorsupdate(self):
         with self.assertRaises(TypeError):
@@ -109,3 +127,13 @@ class TestSquare(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             s112 = Square()
+
+    # to dictionary tests
+    def testSquaretodictionary(self):
+        s113 = Square(10, 2, 1, 113)
+        self.assertEqual(s113.to_dictionary(), {
+                         'id': 113, 'x': 2, 'size': 10, 'y': 1})
+        s113.update(114, 20, 30, 40)
+        self.assertEqual(s113.to_dictionary(), {
+                         'id': 114, 'x': 30, 'size': 20, 'y': 40})
+        self.assertTrue(type(s113.to_dictionary()) is dict)

@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         """simple test
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 13)  # id = 13
+        self.assertEqual(r1.id, 14)  # id = 14
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
@@ -24,8 +24,8 @@ class TestRectangle(unittest.TestCase):
         # area
         self.assertEqual(r1.area(), 20)
 
-        r2 = Rectangle(10, 2, 0, 0, 13)
-        self.assertEqual(r2.id, 13)
+        r2 = Rectangle(10, 2, 0, 0)
+        self.assertEqual(r2.id, 15)  # id 14
         self.assertEqual(r2.width, 10)
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 0)
@@ -48,7 +48,18 @@ class TestRectangle(unittest.TestCase):
         # id 7
         self.assertEqual(r36.display(), None)
 
+#     from io import StringIO
+#    from unittest.mock import patch
+
+
+# r = Rectangle(1, 1)
+#         display_example = "#\n"
+#         with patch('sys.stdout', new=StringIO()) as fakeOutput:
+#             r.display()
+#         self.assertEqual(fakeOutput.getvalue(), display_example)
+
     # str
+
     def test_str1(self):
         r36 = Rectangle(4, 6, 2, 1, 36)
         self.assertEqual(
@@ -124,6 +135,7 @@ class TestRectangle(unittest.TestCase):
         r1.update(204, 20, 15, 20, 3)
         self.assertEqual(r1.to_dictionary(), {
             'width': 20, 'x': 20, 'height': 15, 'y': 3, 'id': 204})
+        self.assertTrue(type(r1.to_dictionary()) is dict)
     # def testRectangletodictionary(self):
     #     with self.assertRaises(TypeError):
     #         r200 = Rectangle(5, 4, 3, 2, 301)

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -46,3 +48,22 @@ class TestBase(unittest.TestCase):
     def test_id_dict(self):
         b11 = Base({1, 2})
         self.assertEqual(b11.id, {1, 2})
+
+    # test to json staticmethod
+    def test_tojson(self):
+        b12 = Rectangle(10, 7, 2, 8)
+        dictionary = b12.to_dictionary()
+        strjson = Base.to_json_string([dictionary])
+        self.assertTrue(type(dictionary) is dict)
+        self.assertTrue(type(strjson) is str)
+
+    def test_savetofile(self):
+        b13 = Rectangle(10, 7, 2, 8, 400)
+        b14 = Rectangle(5, 4, 3, 2, 401)
+        Rectangle.save_to_file([b13, b14])
+        with open("Rectangle.json", "r") as file:
+            num = file.read()
+        lista = list(num)
+        self.assertTrue(lista == [{"y": 8, "x": 2, "width": 10, "id": 400, "height": 7}, {
+                        "y": 2, "x": 3, "width": 5, "id": 401, "height": 4}])
+        print(type(num))
