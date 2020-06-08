@@ -21,10 +21,10 @@ class Square(Rectangle):
             TypeError: width must be an integer
             ValueError: width must be > 0
         """
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        # if type(value) != int:
+        #     raise TypeError("width must be an integer")
+        # if value <= 0:
+        #     raise ValueError("width must be > 0")
         self.width = value
         self.height = value
 
@@ -45,3 +45,9 @@ class Square(Rectangle):
                         if k == key:
                             setattr(self, key, value)
 
+    def to_dictionary(self):
+        new = {}
+        data = ["id", "size", "x", "y"]
+        for i in range(len(data)):
+            new[data[i]] = getattr(self, data[i])
+        return new

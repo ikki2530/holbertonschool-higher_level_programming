@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         """simple test
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 13)  # id = 9
+        self.assertEqual(r1.id, 13)  # id = 13
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
@@ -45,43 +45,53 @@ class TestRectangle(unittest.TestCase):
 
     def test_display1(self):
         r36 = Rectangle(3, 4, 2, 3)
-        self.assertEqual(r36.id, 7)  # id 7
+        # id 7
         self.assertEqual(r36.display(), None)
 
     # str
     def test_str1(self):
         r36 = Rectangle(4, 6, 2, 1, 36)
-        self.assertEqual(r36.__str__(), "[Rectangle] (36) 2/1 - 4/6")
+        self.assertEqual(
+            r36.__str__(), "[Rectangle] ({}) 2/1 - 4/6".format(r36.id))
 
     def test_str2(self):
         r37 = Rectangle(5, 5, 1)  # id 10
-        self.assertEqual(r37.id, 10)
         self.assertEqual(print(r37), None)
-        self.assertEqual(r37.__str__(), "[Rectangle] (10) 1/0 - 5/5")
+        self.assertEqual(
+            r37.__str__(), "[Rectangle] ({}) 1/0 - 5/5".format(r37.id))
 
     def test_update0(self):
         r38 = Rectangle(10, 10, 10, 10, 38)
         r38.update(1000, 2)
-        self.assertEqual(r38.__str__(), "[Rectangle] (1000) 10/10 - 2/10")
+        self.assertEqual(
+            r38.__str__(), "[Rectangle] ({}) 10/10 - 2/10".format(r38.id))
         r38.update(1000, 2, 3, 4, 5, 7)
-        self.assertEqual(r38.__str__(), "[Rectangle] (1000) 4/5 - 2/3")
+        self.assertEqual(
+            r38.__str__(), "[Rectangle] ({}) 4/5 - 2/3".format(r38.id))
         r38.update()
-        self.assertEqual(r38.__str__(), "[Rectangle] (1000) 4/5 - 2/3")
+        self.assertEqual(
+            r38.__str__(), "[Rectangle] ({}) 4/5 - 2/3".format(r38.id))
         r38.update(1000, 2, 18, 4, 5)
-        self.assertEqual(r38.__str__(), "[Rectangle] (1000) 4/5 - 2/18")
+        self.assertEqual(
+            r38.__str__(), "[Rectangle] ({}) 4/5 - 2/18".format(r38.id))
 
     def test_update1(self):
         r39 = Rectangle(5, 4, 3, 2, 39)
         r39.update(2020, 3)
-        self.assertEqual(r39.__str__(), "[Rectangle] (2020) 3/2 - 3/4")
+        self.assertEqual(
+            r39.__str__(), "[Rectangle] ({}) 3/2 - 3/4".format(r39.id))
         r39.update(height=1)
-        self.assertEqual(r39.__str__(), "[Rectangle] (2020) 3/2 - 3/1")
+        self.assertEqual(
+            r39.__str__(), "[Rectangle] ({}) 3/2 - 3/1".format(r39.id))
         r39.update(width=1, x=2)
-        self.assertEqual(r39.__str__(), "[Rectangle] (2020) 2/2 - 1/1")
+        self.assertEqual(
+            r39.__str__(), "[Rectangle] ({}) 2/2 - 1/1".format(r39.id))
         r39.update(x=1, height=2, y=3, width=4)
-        self.assertEqual(r39.__str__(), "[Rectangle] (2020) 1/3 - 4/2")
+        self.assertEqual(
+            r39.__str__(), "[Rectangle] ({}) 1/3 - 4/2".format(r39.id))
         r39.update(2021, 10, height=15)
-        self.assertEqual(r39.__str__(), "[Rectangle] (2021) 1/3 - 10/2")
+        self.assertEqual(
+            r39.__str__(), "[Rectangle] ({}) 1/3 - 10/2".format(r39.id))
 
     # errors for update
     def test_updateNegativeValue(self):
@@ -104,6 +114,20 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r200 = Rectangle(5, 4, 3, 2, 301)
             r200.update(y=-3, x="hola")
+
+    # todictionary
+
+    def testRectangletodictionary(self):
+        r1 = Rectangle(10, 2, 1, 9, 203)
+        self.assertEqual(r1.to_dictionary(), {
+            'width': 10, 'x': 1, 'height': 2, 'y': 9, 'id': 203})
+        r1.update(204, 20, 15, 20, 3)
+        self.assertEqual(r1.to_dictionary(), {
+            'width': 20, 'x': 20, 'height': 15, 'y': 3, 'id': 204})
+    # def testRectangletodictionary(self):
+    #     with self.assertRaises(TypeError):
+    #         r200 = Rectangle(5, 4, 3, 2, 301)
+    #         r200.update(y=-3, x="hola")
 
     # id no corresponde al valor de r
     def test_None(self):

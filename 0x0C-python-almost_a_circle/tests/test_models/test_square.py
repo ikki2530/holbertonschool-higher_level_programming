@@ -15,7 +15,7 @@ class TestSquare(unittest.TestCase):
     # update tests
     def test_squareupdate(self):
         s103 = Square(5)
-        self.assertEqual(s103.__str__(), "[Square] (15) 0/0 - 5")  # id 15
+        self.assertEqual(s103.__str__(), "[Square] (17) 0/0 - 5")  # id 17
         s103.update(103)
         self.assertEqual(s103.__str__(), "[Square] (103) 0/0 - 5")
         s103.update(103, 2)
@@ -37,3 +37,75 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             s104 = Square(5, 2, 3, 104)
             s104.update(size=3, x=-3)
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(2000, (None, ))
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(2000, [None])
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(2000, 3, (1, 2))
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(2000, 3, 2, True)
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(x=True)
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(y=[None], x=3)
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(y=None, x=3)
+
+        with self.assertRaises(TypeError):
+            s104 = Square(5, 2, 3, 104)
+            s104.update(y=3, x=3, size=None)
+
+    def test_squaretypevalue(self):
+        with self.assertRaises(TypeError):
+            s105 = Square(5, "hola")
+
+        with self.assertRaises(TypeError):
+            s105 = Square([1], "hola", 3, 105)
+
+        with self.assertRaises(TypeError):
+            s106 = Square(True, 3, 3, 106)
+
+        with self.assertRaises(TypeError):
+            s107 = Square((1, 2), 3, 3, 107)
+
+        with self.assertRaises(TypeError):
+            s107 = Square({1, 2}, 3, 3, 107)
+
+        with self.assertRaises(TypeError):
+            s108 = Square(3.5, 3, 3, 108)
+
+        with self.assertRaises(TypeError):
+            s108 = Square("holberton", 3, 3, 108)
+
+        with self.assertRaises(TypeError):
+            s109 = Square(None, 3, 3, 109)
+
+        with self.assertRaises(ValueError):
+            s110 = Square(-3, 3, 3, 110)
+
+        with self.assertRaises(TypeError):
+            s110 = Square(3, {1, 2}, 3, 110)
+
+        with self.assertRaises(TypeError):
+            s111 = Square(3, 2, True, 111)
+
+        with self.assertRaises(TypeError):
+            s111 = Square("")
+
+        with self.assertRaises(TypeError):
+            s112 = Square()

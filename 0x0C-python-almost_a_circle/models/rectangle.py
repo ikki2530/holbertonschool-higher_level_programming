@@ -187,6 +187,8 @@ class Rectangle(Base):
                             setattr(self, key, value)
 
     def to_dictionary(self):
-        for k, v in self.__dict__.items():
-            print("key", k, "value", v)
-        return self.__dict__
+        new = {}
+        data = ["id", "width", "height", "x", "y"]
+        for i in range(len(data)):
+            new[data[i]] = getattr(self, data[i])
+        return new
