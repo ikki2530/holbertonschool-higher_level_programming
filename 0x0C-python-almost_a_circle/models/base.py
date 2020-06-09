@@ -109,7 +109,6 @@ class Base:
             list_out = []
             with open(filename, "r", encoding="utf-8") as f:
                 data_fromfile = f.read()
-            print(data_fromfile)
             # from json string to python
             list_dict = cls.from_json_string(data_fromfile)
             for dic in list_dict:
