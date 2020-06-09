@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """TestRectangle class"""
 import unittest
+import pep8
 from models.rectangle import Rectangle, Base
 from io import StringIO
 from unittest.mock import patch
@@ -250,3 +251,10 @@ class TestRectangle(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             r21 = Rectangle()
+
+    # pep8
+    def test_square_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['./models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0)
