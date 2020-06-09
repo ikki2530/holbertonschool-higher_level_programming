@@ -51,7 +51,7 @@ class TestRectangle(unittest.TestCase):
         It must print a rectangle of the same area given by width and height
         """
         r35 = Rectangle(3, 5, 4, 3, 35)
-        self.assertEqual(r35.display(), None)
+        #self.assertEqual(r35.display(), None)
         r300 = Rectangle(3, 2)
         display_exmp = "###\n###\n"
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
@@ -63,7 +63,7 @@ class TestRectangle(unittest.TestCase):
         """
         r36 = Rectangle(3, 4, 2, 3)
         # id 7
-        self.assertEqual(r36.display(), None)
+        #self.assertEqual(r36.display(), None)
         r301 = Rectangle(3, 2, 2, 1, 301)
         display_exmp = "\n  ###\n  ###\n"
 
@@ -82,7 +82,7 @@ class TestRectangle(unittest.TestCase):
         """checking format string to the print
         """
         r37 = Rectangle(5, 5, 1)  # id 10
-        self.assertEqual(print(r37), None)
+        #self.assertEqual(print(r37), None)
         self.assertEqual(
             r37.__str__(), "[Rectangle] ({}) 1/0 - 5/5".format(r37.id))
 
