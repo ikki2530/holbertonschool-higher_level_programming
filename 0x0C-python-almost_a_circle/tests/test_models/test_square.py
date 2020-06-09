@@ -1,21 +1,39 @@
 #!/usr/bin/python3
 """square tests"""
 import unittest
+from models.base import Base
 from models.square import Square
+from io import StringIO
+from unittest.mock import patch
 
 
 class TestSquare(unittest.TestCase):
+    """Tests for Square class
+
+    Args:
+        unittest ([type]): Unittest for Square class
+    """
+
+    def setUp(self):
+        """setting up intial conditions
+        """
+        Base._Base__nb_objects = 0
+
     def test_squareid(self):
+        """adding test for id in square
+        """
         s98 = Square(10, 5, 4)
 
-        self.assertEqual(s98.id, 16)  # id 16
+        self.assertEqual(s98.id, 1)  # id 1
 
         s99 = Square(10, 6, 8)
-        self.assertEqual(s99.id, 17)  # id 17
+        self.assertEqual(s99.id, 2)  # id 2
 
     # str for square
 
     def test_squarestr(self):
+        """str for square
+        """
         s101 = Square(5, 3, 2, 101)
         self.assertEqual(
             s101.__str__(), "[Square] ({}) 3/2 - 5".format(s101.id))
@@ -23,8 +41,20 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(
             s102.__str__(), "[Square] ({}) 0/0 - 5".format(s102.id))  # id 17
 
+    def testsquaredisplay(self):
+        """test the display
+        """
+        s303 = Square(4, 2, 1, 303)
+        display_exmp = "\n  ####\n  ####\n  ####\n  ####\n"
+
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            s303.display()
+        self.assertEqual(fakeOutput.getvalue(), display_exmp)
+
     # update tests
     def test_squareupdate(self):
+        """updating the square, and checking it
+        """
         s103 = Square(5)
         self.assertEqual(
             s103.__str__(), "[Square] ({}) 0/0 - 5".format(s103.id))  # id 18
@@ -48,9 +78,12 @@ class TestSquare(unittest.TestCase):
             s103.__str__(), "[Square] ({}) 3/1 - 7".format(s103.id))
 
     def test_errorsupdate(self):
-        with self.assertRaises(TypeError):
+        """checking tests for erros in update function
+        """
+        with self.assertRaises(TypeError) as cm104:
             s104 = Square(5, 2, 3, 104)
             s104.update(x=-3, size="hola")
+        self.assertTrue("width must be an integer" in str(cm104.exception))
 
         with self.assertRaises(ValueError):
             s104 = Square(5, 2, 3, 104)
@@ -89,6 +122,8 @@ class TestSquare(unittest.TestCase):
             s104.update(y=3, x=3, size=None)
 
     def test_squaretypevalue(self):
+        """type of the square value
+        """
         with self.assertRaises(TypeError):
             s105 = Square(5, "hola")
 
@@ -130,6 +165,8 @@ class TestSquare(unittest.TestCase):
 
     # to dictionary tests
     def testSquaretodictionary(self):
+        """testing dictionary
+        """
         s113 = Square(10, 2, 1, 113)
         self.assertEqual(s113.to_dictionary(), {
                          'id': 113, 'x': 2, 'size': 10, 'y': 1})
