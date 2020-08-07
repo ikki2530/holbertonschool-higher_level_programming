@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Connect to the database and executing a query"""
+
+
 import MySQLdb
 import sys
 
@@ -14,7 +16,8 @@ if __name__ == "__main__":
     db_conn = MySQLdb.connect(host=lh, user=u, passwd=p, db=d, port=3306)
 
     cur = db_conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id", (nam,))
+    cur.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id",
+                (nam,))
 
     rows = cur.fetchall()
 

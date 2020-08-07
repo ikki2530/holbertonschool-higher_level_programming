@@ -17,9 +17,9 @@ if __name__ == "__main__":
 
     cur = db_conn.cursor()
 
-    cur.execute(("""SELECT cities.id, cities.name
-    FROM cities
-    JOIN states ON (states.name=%s AND states.id = cities.state_id) ORDER BY cities.id"""), (state,))
+    cur.execute(("""SELECT cities.id, cities.nameFROM cities
+    JOIN states ON (states.name=%s AND states.id = cities.state_id)
+    ORDER BY cities.id"""), (state,))
 
     rows = cur.fetchall()
     if rows:
