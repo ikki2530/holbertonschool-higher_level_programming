@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     cur.execute(("""SELECT cities.id, cities.name
     FROM cities
-    JOIN states ON (states.name=%s AND states.id = cities.state_id)"""), (state,))
+    JOIN states ON (states.name=%s AND states.id = cities.state_id) ORDER BY cities.id"""), (state,))
 
     rows = cur.fetchall()
     if rows:
