@@ -17,7 +17,7 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@{}:3306/{}'.format(
             u, p, lh, d))
     Session = sessionmaker(bind=engine)
-    #take the first element
+    # take the first element
     session = Session().query(State).order_by(State.id).first()
     if session:
         print("{}: {}".format(session.id, session.name))
