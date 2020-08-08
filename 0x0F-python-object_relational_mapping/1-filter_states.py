@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""COnnect to the database and executing a query"""
+"""Connect to the database and executing a query"""
+
+
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
+    """Connect to the database and executing a query"""
     lh = "localhost"
     u = sys.argv[1]
     p = sys.argv[2]
