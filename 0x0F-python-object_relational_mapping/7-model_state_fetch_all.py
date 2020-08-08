@@ -17,8 +17,12 @@ if __name__ == "__main__":
     d = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@{}:3306/{}'.format(
             u, p, lh, d))
-    result = engine.execute("select * from {} ORDER BY states.id".format(
-            "states"))
+    # result = engine.execute("select * from {} ORDER BY states.id".format(
+    #         "states"))
+    Session = sessionmaker(bind=engine)
 
-    for row in result:
-        print("{}: {}".format(row[0], row[1]))
+    session = Session().query(State).order_by(State.id)
+    for state in session:
+        print("{}: {}".format(state.id, state.name))
+    # for row in result:
+    #     print("{}: {}".format(row[0], row[1]))
