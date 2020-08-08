@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     cur = db_conn.cursor()
 
-    cur.execute(("""SELECT cities.id, cities.nameFROM cities
-    JOIN states ON (states.name=%s AND states.id = cities.state_id)
+    cur.execute(("""SELECT cities.name FROM cities
+    JOIN states ON (states.id = cities.state_id) WHERE states.name=%s
     ORDER BY cities.id"""), (state,))
 
     rows = cur.fetchall()
@@ -26,8 +26,10 @@ if __name__ == "__main__":
         lg = len(rows)
         for i in range(lg):
             if i == lg - 1:
-                print(rows[i][1])
+                print(rows[i][0])
             else:
-                print(rows[i][1], end=", ")
+                print(rows[i][0], end=", ")
+    else:
+        print()
     cur.close()
     db_conn.close()
