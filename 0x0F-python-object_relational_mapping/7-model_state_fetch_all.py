@@ -17,9 +17,8 @@ if __name__ == "__main__":
     d = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@{}:3306/{}'.format(
             u, p, lh, d))
-    result = engine.execute("select * from {}".format("states"))
+    result = engine.execute("select * from {} ORDER BY states.id".format("states"))
+
 
     for row in result:
-        print(row)
-
-
+        print("{}: {}".format(row[0],row[1]))
