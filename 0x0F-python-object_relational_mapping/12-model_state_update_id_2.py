@@ -22,4 +22,3 @@ if __name__ == "__main__":
     to_update = session.query(State).filter(State.id == 2).one()
     to_update.name = "New Mexico"
     session.commit()
-
