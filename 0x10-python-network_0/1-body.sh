@@ -3,5 +3,5 @@
 response=$(curl -w "%{http_code}\n" -s -X GET -L "$1")
 
 if [ "$response" == "200" ]; then
-    $response
+    echo "$response"
 fi
