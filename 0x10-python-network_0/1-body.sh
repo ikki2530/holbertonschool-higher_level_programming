@@ -4,5 +4,5 @@ response=$(curl -w "%{http_code}\n" -s -o /dev/null -X GET -L "$1")
 echo "$response"
 if [ "$response" -eq 200 ]; then
     echo "Helloo!"
-    curl "$1"
+    curl -X GET -L "$1" "$1"
 fi
