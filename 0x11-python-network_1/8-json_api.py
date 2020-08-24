@@ -12,7 +12,7 @@ if __name__ == "__main__":
         q = sys.argv[1]
     else:
         q = ""
-        
+
     url = "http://0.0.0.0:5000/search_user"
     response = requests.post(url, data={'q': q})
     try:
