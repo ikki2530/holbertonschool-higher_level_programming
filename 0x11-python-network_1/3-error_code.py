@@ -17,4 +17,4 @@ if __name__ == "__main__":
         with urlopen(req) as response:
             print(response.read().decode('utf-8'))
     except URLError as e:
-        print(e.code)
+        print("Error code:", e.code)
