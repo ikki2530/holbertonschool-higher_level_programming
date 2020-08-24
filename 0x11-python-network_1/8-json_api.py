@@ -36,7 +36,7 @@ if __name__ == "__main__":
     if response.headers.get('content-type') == 'application/json' and dic:
         print("[{}] {}".format(dic['id'], dic['name']))
     else:
-        if response.headers('content-type') != 'application/json':
+        if response.headers.get('content-type') != 'application/json':
             print("Not a valid JSON")
         elif not response.json():
             print("No result")
