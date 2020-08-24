@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
     lg = len(sys.argv)
-    if lg < 2:
+    if lg != 2:
         q = ""
     else:
         q = sys.argv[1]
