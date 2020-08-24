@@ -31,9 +31,9 @@ if __name__ == "__main__":
     response = requests.post(
         'http://cb6c4d06c482.22216bed.hbtn-cod.io:5000/search_user',
         data={'q': q})
-
-    dic = response.json()
-    if response.headers.get('content-type') == 'application/json' and dic:
+    cond = response.headers.get('content-type')
+    if cond == 'application/json' and response.json():
+        dic = response.json()
         print("[{}] {}".format(dic['id'], dic['name']))
     else:
         if response.headers.get('content-type') != 'application/json':
