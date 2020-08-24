@@ -10,4 +10,4 @@ import sys
 if __name__ == "__main__":
     url_arg = sys.argv[1]
     response = requests.get("https://intranet.hbtn.io/status")
-    print(response.header)
+    print(response.headers["X-Request-Id"])
