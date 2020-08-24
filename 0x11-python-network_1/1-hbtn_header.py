@@ -3,8 +3,8 @@
 import sys
 import urllib.request
 
-
-url_arg = sys.argv[1]
-with urllib.request.urlopen(url_arg) as response:
-    variable = response.info()['X-Request-Id']
-    print(variable)
+if __name__ == "__main__":
+    url_arg = sys.argv[1]
+    with urllib.request.urlopen(url_arg) as response:
+        variable = response.info()['X-Request-Id']
+        print(variable)
