@@ -7,16 +7,16 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv != 2):
+    if len(sys.argv) != 2:
         print("No result")
     else:
         try:
-            url = ' http://cb6c4d06c482.22216bed.hbtn-cod.io:5000'
+            url = 'http://cb6c4d06c482.22216bed.hbtn-cod.io:5000/search_user'
             letter = sys.argv[1]
             response = requests.post(url, data={'q': letter})
             resp = response.json()
             if resp:
-                print("[{}] {}".format(dic['id'], dic['name']))
+                print("[{}] {}".format(resp['id'], resp['name']))
             else:
                 print("No result")
         except Exception:
