@@ -7,36 +7,28 @@ import sys
 
 
 if __name__ == "__main__":
-    # if len(sys.argv) != 2:
-    #     print("No result")
-    # else:
-    #     try:
-    #         url = 'http://cb6c4d06c482.22216bed.hbtn-cod.io:5000/search_user'
-    #         letter = sys.argv[1]
-    #         response = requests.post(url, data={'q': letter})
-    #         resp = response.json()
-    #         if resp:
-    #             print("[{}] {}".format(resp['id'], resp['name']))
-    #         else:
-    #             print("No result")
-    #     except Exception:
-    #         print("Not a valid JSON")
-
     lg = len(sys.argv)
-    if lg != 2:
-        q = ""
-    else:
+    if lg == 2:
         q = sys.argv[1]
-
-    response = requests.post(
-        'http://cb6c4d06c482.22216bed.hbtn-cod.io:5000/search_user',
-        data={'q': q})
-    cond = response.headers.get('content-type')
-    if cond == 'application/json' and response.json():
-        dic = response.json()
-        print("[{}] {}".format(dic['id'], dic['name']))
     else:
-        if response.headers.get('content-type') != 'application/json':
-            print("Not a valid JSON")
-        elif not response.json():
+        q = ""
+        
+    url = "http://0.0.0.0:5000/search_user"
+    response = requests.post(url, data={'q': q})
+    try:
+        json_cont = response.json()
+        if len(json_cont) == 0:
             print("No result")
+        else:
+            print("[{}] {}".format(json_cont['id'], json_cont['name']))
+    except Exception:
+        print("Not a valid JSON")
+
+    # if cond == 'application/json' and response.json():
+    #     dic = response.json()
+    #     print("[{}] {}".format(dic['id'], dic['name']))
+    # else:
+    #     if response.headers.get('content-type') != 'application/json':
+    #         print("Not a valid JSON")
+    #     elif not response.json():
+    #         print("No result")
