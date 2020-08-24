@@ -12,6 +12,7 @@ if __name__ == "__main__":
     url_arg = sys.argv[1]
     req = Request(url_arg)
     try:
-        urlopen(req)
+        with urlopen(req) as response:
+            print(response.read())
     except urllib.error.URLError as e:
         print(e.reason)
