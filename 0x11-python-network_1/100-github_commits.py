@@ -12,4 +12,11 @@ if __name__ == "__main__":
     own = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(own, rep)
     response = requests.get(url)
-    print(type(response.content))
+
+    dic = response.json()
+    cont = 0
+    for i in dic:
+        print("{}: {}".format(i['sha'], i['commit']['author']['name']))
+        if cont == 9:
+            break
+        cont += 1
