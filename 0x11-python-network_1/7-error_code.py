@@ -8,6 +8,9 @@ import sys
 
 if __name__ == "__main__":
     url_arg = sys.argv[1]
-    email = sys.argv[2]
-    response = requests.post(url_arg)
-    print(response.status_code)
+    response = requests.get(url_arg)
+
+    if response.status_code >= 400:
+        print("Error code:", response.status_code)
+    else:
+        print(response.text)
