@@ -7,13 +7,13 @@ class Square extends Square1 {
     super(size, size);
   }
 
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
-      super.print()
+      super.print();
     } else {
       let ch = '';
       for (let i = 0; i < this.width; i++) {
-        for (let j = 0; j < this.width; j++){
+        for (let j = 0; j < this.width; j++) {
           ch += c;
         }
         console.log(ch);
