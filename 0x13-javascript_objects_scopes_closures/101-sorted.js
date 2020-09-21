@@ -3,12 +3,12 @@
 
 const dict = require('./101-data').dict;
 
-new_dict = {}
+const newDict = {};
 for (var key in dict) {
-  let ocurrences = dict[key];
-  if (!new_dict[ocurrences]) {
-      new_dict[ocurrences] = []; 
+  const ocurrences = dict[key];
+  if (!newDict[ocurrences]) {
+    newDict[ocurrences] = [];
   }
-  new_dict[ocurrences].push(key);
+  newDict[ocurrences].push(key);
 }
-console.log(new_dict);
+console.log(newDict);
