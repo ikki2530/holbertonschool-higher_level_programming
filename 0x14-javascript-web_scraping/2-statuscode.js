@@ -5,7 +5,7 @@ const myArgs = process.argv.slice(2);
 
 request.get(myArgs[0], (err, res, body) => {
   if (err) {
-    return console.log("code: " + err);
+    return console.log('code: ' + err);
   }
-  console.log("code: " + res.statusCode);
+  console.log('code: ' + res.statusCode);
 });
