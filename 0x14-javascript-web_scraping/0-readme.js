@@ -14,21 +14,21 @@ const myArgs = process.argv.slice(2);
 
 // }) 
 
-// try {
-//   const dataA = fs.readFileSync(myArgs[0], 'utf8');
-//   console.log(dataA);
-// }
-// catch (err) {
-//   console.log(err);
-// }
-
 try {
-  fs.readFile(myArgs[0], (err, data) => {
-    if (err) {
-      throw err;
-    }
-    console.log(data.toString());
-  })
-} catch (ex) {
-  console.log(ex)
+  const dataA = fs.readFileSync(myArgs[0], 'utf8');
+  console.log(dataA);
 }
+catch (err) {
+  console.log(err);
+}
+
+// try {
+//   fs.readFile(myArgs[0], (err, data) => {
+//     if (err) {
+//       throw err;
+//     }
+//     console.log(data.toString());
+//   })
+// } catch (ex) {
+//   console.log(ex)
+// }
