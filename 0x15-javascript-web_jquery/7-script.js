@@ -1,3 +1,4 @@
+// fetches and replaces the name of this URL
 $(function (){
   cont = $.ajax({
     type: 'GET',
